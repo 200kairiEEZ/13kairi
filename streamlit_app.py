@@ -1,8 +1,8 @@
 import streamlit as st
 import random
-st.title("おみくじアプリ")
-if st.button("おみくじを引く"):
-    results = ["大吉","中吉","小吉","吉","凶","大凶"]
+st.title("素数")
+if st.button("素数おみくじを引く"):
+    results = ["２","３","５","７","１１","１３","１７","１９","","",]
     result = random.choice(results)
     st.write(f"結果:{result}")
 
