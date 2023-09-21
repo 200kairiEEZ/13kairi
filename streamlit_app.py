@@ -1,6 +1,8 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
+import pip install matplotlib as mlt
+
 
 # Streamlitアプリケーションのタイトルを設定
 st.title("自動絵画アプリ")
