@@ -1,23 +1,32 @@
 import streamlit as st
-import matplotlib.pyplot as plt
-import numpy as np
-import pip install matplotlib as mlt
-
 
 # Streamlitアプリケーションのタイトルを設定
-st.title("自動絵画アプリ")
+st.title("ベースギターWebアプリ")
 
-# 円の中心座標と半径のユーザー入力を受け取る
-center_x = st.number_input("円の中心のX座標", min_value=0, max_value=500, value=250)
-center_y = st.number_input("円の中心のY座標", min_value=0, max_value=500, value=250)
-radius = st.number_input("円の半径", min_value=10, max_value=200, value=50)
+# ベースギターの基本情報を表示
+st.header("ベースギターについて")
+st.write("ベースギターは低音の楽器で、リズムとメロディをサポートします。")
 
-# 円を描画する
-fig, ax = plt.subplots()
-circle = plt.Circle((center_x, center_y), radius, fill=False, color='blue', linewidth=2)
-ax.add_patch(circle)
+# ベースギターの画像を表示
+st.image("bass_guitar.jpg", caption="ベースギター", use_column_width=True)
 
-# グラフの表示
-st.pyplot(fig)
+# ベースギターの音符を演奏するコンポーネント
+st.header("ベースギターの演奏")
+
+# 選択した音符のリスト
+notes = ["C", "D", "E", "F", "G", "A", "B"]
+
+# ドロップダウンメニューで音符を選択
+selected_note = st.selectbox("音符を選択してください:", notes)
+
+# 選択した音符を演奏するボタン
+if st.button("演奏"):
+    st.write(f"ベースギターで {selected_note} を演奏しました！")
+
+# ベースギターの演奏の説明
+st.write("音符を選択して「演奏」ボタンを押すと、ベースギターで音を鳴らすことができます。")
+
+# 注意: 実際に音を鳴らすためには、音声処理ライブラリを使用する必要がありますが、
+# この例では単純化のために音を再生しない形で実装しています。
 
 
